@@ -1,0 +1,5 @@
+mkdir ~/.vim/backup/ ~/.vim/undo/ ~/.vim/swap/
+cp .tmux.conf .vimrc .zshrc ~
+sudo apt-get --ignore-missing install vim tmux zsh fonts-powerline
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
