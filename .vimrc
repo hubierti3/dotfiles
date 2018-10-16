@@ -59,3 +59,4 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols.linenr = ''
 	
 inoremap {<cr> {<cr><cr>}<esc>kA<tab>
+nnoremap <C-o> o<esc>
