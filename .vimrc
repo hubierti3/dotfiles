@@ -1,3 +1,4 @@
+" vundle stuff
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -10,22 +11,41 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'posva/vim-vue'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 
-syn on
 
-set number relativenumber
-
+" basic vim setup
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
-
-set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
-set laststatus=2
+let mapleader = "-"
 
 set autoindent
 set tabstop=4
+set shiftwidth=4
 set noexpandtab
+
+syn on
+set number relativenumber
+
+
+" own vim mappings
+inoremap {<cr> {<cr><cr>}<esc>kA<tab>
+nnoremap <C-o> o<esc>
+
+
+" nerdtree
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists(“s:std_in”) | NERDTree | endif
+
+nnoremap <leader>f  :NERDTreeToggle<cr>
+nnoremap <silent> <leader>v :NERDTreeFind<cr>
+
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -61,5 +81,3 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols.readonly = ''
 	let g:airline_symbols.linenr = ''
 	
-inoremap {<cr> {<cr><cr>}<esc>kA<tab>
-nnoremap <C-o> o<esc>

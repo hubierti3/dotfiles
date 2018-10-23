@@ -6,4 +6,4 @@ mkdir ~/.vim/backup/ ~/.vim/undo/ ~/.vim/swap/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-sudo apt-get --ignore-missing install vim tmux zsh fonts-powerline
+sudo apt-get --ignore-missing install vim tmux zsh fonts-powerline vim-gtk
